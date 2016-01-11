@@ -404,7 +404,11 @@ typedef long long off64_t;
 #include <sys/time.h>
 
 #ifdef SHARED_MEM
+#ifdef ANDROID
+#include <linux/shm.h>
+#else
 #include <sys/shm.h>
+#endif
 #endif
 
 #if defined(bsd4_2) && !defined(MS_SYNC)

@@ -17,7 +17,7 @@
 #include <sys/types.h>
 #include <stdio.h>
 #include <sys/file.h>
-#if defined(__AIX__) || defined(__FreeBSD__) || defined(__DragonFly__)
+#if defined(__AIX__) || defined(__FreeBSD__) || defined(__DragonFly__) || defined(ANDROID)
 #include <fcntl.h>
 #else
 #include <sys/fcntl.h>
