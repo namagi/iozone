@@ -1,0 +1,35 @@
+commit a889bb0ce0b2381ee9583d72cf2a8887c957b9c6
+Author: namagi <br.mladen@gmail.com>
+
+    iozone: Adapt to Android
+
+diff --git a/iozone.c b/iozone.c
+index 65c51a3..186daf2 100755
+--- a/iozone.c
++++ b/iozone.c
+@@ -404,8 +404,12 @@ typedef long long off64_t;
+ #include <sys/time.h>
+ 
+ #ifdef SHARED_MEM
++#ifdef ANDROID
++#include <linux/shm.h>
++#else
+ #include <sys/shm.h>
+ #endif
++#endif
+ 
+ #if defined(bsd4_2) && !defined(MS_SYNC)
+ #define MS_SYNC 0
+diff --git a/libbif.c b/libbif.c
+index 0f40a36..3bfe134 100755
+--- a/libbif.c
++++ b/libbif.c
+@@ -17,7 +17,7 @@
+ #include <sys/types.h>
+ #include <stdio.h>
+ #include <sys/file.h>
+-#if defined(__AIX__) || defined(__FreeBSD__) || defined(__DragonFly__)
++#if defined(__AIX__) || defined(__FreeBSD__) || defined(__DragonFly__) || defined(ANDROID)
+ #include <fcntl.h>
+ #else
+ #include <sys/fcntl.h>

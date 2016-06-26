@@ -310,8 +310,8 @@ static int openSckt( const char *service,
                   "   ai_family    = %d (PF_INET = %d, PF_INET6 = %d)\n"
                   "   ai_socktype  = %d (SOCK_STREAM = %d, SOCK_DGRAM = %d)\n"
                   "   ai_protocol  = %d (IPPROTO_TCP = %d, IPPROTO_UDP = %d)\n"
-                  "   ai_addrlen   = %d (sockaddr_in = %lu, "
-                  "sockaddr_in6 = %lu)\n",
+                  "   ai_addrlen   = %d (sockaddr_in = %zu, "
+                  "sockaddr_in6 = %zu)\n",
                   ai->ai_flags,
                   ai->ai_family,
                   PF_INET,
@@ -620,8 +620,8 @@ static void pit( int    tSckt[ ],
                fprintf( stderr,
                         "Sockaddr info for new TCP client:\n"
                         "   sa_family = %d (AF_INET = %d, AF_INET6 = %d)\n"
-                        "   addr len  = %d (sockaddr_in = %lu, "
-                        "sockaddr_in6 = %lu)\n",
+                        "   addr len  = %d (sockaddr_in = %zu, "
+                        "sockaddr_in6 = %zu)\n",
                         sadr->sa_family,
                         AF_INET,
                         AF_INET6,
@@ -728,7 +728,7 @@ static void pit( int    tSckt[ ],
             {
                ssize_t rBytes = count;
                fprintf( stderr,
-                        "%s: UDP datagram received (%ld bytes).\n",
+                        "%s: UDP datagram received (%zd bytes).\n",
                         pgmName,
                         count );
                while ( count > 0 )
@@ -745,8 +745,8 @@ static void pit( int    tSckt[ ],
                fprintf( stderr,
                         "Remote client's sockaddr info:\n"
                         "   sa_family = %d (AF_INET = %d, AF_INET6 = %d)\n"
-                        "   addr len  = %d (sockaddr_in = %lu, "
-                        "sockaddr_in6 = %lu)\n",
+                        "   addr len  = %d (sockaddr_in = %zu, "
+                        "sockaddr_in6 = %zu)\n",
                         sadr->sa_family,
                         AF_INET,
                         AF_INET6,

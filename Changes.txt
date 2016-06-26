@@ -2522,3 +2522,18 @@ Adding NetBSD 64 bit.
 Revision 3.434
 Adding code from Alexey Skidanov. Pthread burst I/O.
 =============================================================================
+Revision 3.434
+Convert calls from atoi() into atoll() for those things that are actually long longs.
+=============================================================================
+Revision 3.436
+Code cleanup for casting consistency
+=============================================================================
+Revision 3.442
+Code cleanup for casting consistency and *&(^&*( compiler warnings !!!
+=============================================================================
+Revision 3.443
+Code cleanup for all of the un-needed void * maddness.
+=============================================================================
+Revision 3.444
+Cleanup 64 bit compiles.
+=============================================================================
